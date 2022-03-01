@@ -1,29 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>Weather</title>
+    <title>Weather App</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
   </head>
-
+  <style>
+    body {
+      background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
+      height: 100vh;
+    }
+    .btn-color {
+      background-color: rgb(48 101 152);
+    }
+  </style>
   <body>
-    <div class="location">
-      <h1 class="location-timezone">TimeZone</h1>
-      <p style="font-size:180%">,</p>
-      <h1 class="location-country">Country</h1>
-      <div class="weather-icon"><img src="icons/unknown.png" /></div>
-    </div>
-
-    <div class="temperature">
-      <div class="degree-section">
-        <h2 class="temperature-degree">26</h2>
-        <span>°F</span>
+    <div class="container">
+      <form class="col-md-6 m-auto py-5">
+        <div class="input-group mb-3">
+          <input
+            id="city-name"
+            type="text"
+            class="form-control"
+            placeholder="Enter a location to see weather ..."
+          />
+          <div class="input-group-append">
+            <button
+              onclick="searchTemparature()"
+              type="button"
+              class="btn btn-color text-white"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </form>
+      <div class="weather-status text-white text-center">
+        <img
+          id="weather-icon"
+          src="https://openweathermap.org/img/wn/02d@2x.png"
+          alt=""
+        />
+        <h1 id="city">Dhaka</h1>
+        <h3 id="temp-section">
+          <span id="temperature">38.06</span
+          ><span id="change-temp">&deg;C</span>
+        </h3>
+        <h1 id="condition" class="lead">Clouds</h1>
       </div>
-
-      <div class="temperature-description">Its friggin cold</div>
     </div>
-
     <script src="app.js"></script>
   </body>
 </html>
