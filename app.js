@@ -7,7 +7,11 @@ const searchTemparature = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        displayWeather(data);
+        if (data.name == undefined) {
+          alert("No data available");
+        } else {
+          displayWeather(data);
+        }
       });
   }
 };
@@ -35,8 +39,10 @@ window.addEventListener("load", () => {
       fetch(api)
         .then((response) => response.json())
         .then((data) => {
-          displayWeather(data);
-          farenheitToCelsius(data);
+          if (data) {
+            displayWeather(data);
+            farenheitToCelsius(data);
+          }
         });
     });
   }
